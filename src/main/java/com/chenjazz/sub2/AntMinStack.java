@@ -1,7 +1,5 @@
 package com.chenjazz.sub2;
 
-import java.util.Arrays;
-
 /**
  * 栈结构
  *
@@ -23,9 +21,6 @@ public class AntMinStack<E extends Comparable<E>> {
      * @param element 元素
      */
     public void push(E element) {
-        if (element == null) {
-            throw new IllegalArgumentException("入栈元素不能为null");
-        }
         stack.push(element);
         if (minStack.isEmpty())
             minStack.push(element);
@@ -60,9 +55,17 @@ public class AntMinStack<E extends Comparable<E>> {
         return minStack.peek();
     }
 
+    public int size() {
+        return stack.n;
+    }
+
     @Override
     public String toString() {
-        return Arrays.toString(stack.array);
+        String s = "";
+        for (int i = 0; i < stack.n; i++) {
+            s += stack.array[i] + " ";
+        }
+        return s;
     }
 
     private static class InnerStack<T> {
@@ -93,7 +96,7 @@ public class AntMinStack<E extends Comparable<E>> {
 
         public T pop() {
             if (n == 0) {
-                System.out.println("当前栈中无元素");
+//                System.out.println("当前栈中无元素");
                 return null;
             }
             n = n - 1;
@@ -108,7 +111,7 @@ public class AntMinStack<E extends Comparable<E>> {
 
         public T peek() {
             if (n == 0) {
-                System.out.println("当前栈中无元素");
+//                System.out.println("当前栈中无元素");
                 return null;
             }
             return array[n - 1];

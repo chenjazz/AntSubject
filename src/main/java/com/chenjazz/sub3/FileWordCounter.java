@@ -1,14 +1,14 @@
 package com.chenjazz.sub3;
 
-import org.junit.Test;
-
-import java.io.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
-import java.util.Random;
 
 /**
+ * 统计大文件（大小<2G）特定单词出现次数和总时间耗时
+ *
  * @author chenjazz
  * @since 2018/7/12
  */
