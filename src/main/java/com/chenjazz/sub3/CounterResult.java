@@ -22,6 +22,22 @@ public class CounterResult {
         this.useSeconds = useSeconds;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public float getUseSeconds() {
+        return useSeconds;
+    }
+
+    public void setUseSeconds(float useSeconds) {
+        this.useSeconds = useSeconds;
+    }
+
     @Override
     public String toString() {
         return "CounterResult{" +
