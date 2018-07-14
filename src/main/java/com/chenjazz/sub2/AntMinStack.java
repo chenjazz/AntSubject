@@ -1,6 +1,10 @@
 package com.chenjazz.sub2;
 
+import java.util.Arrays;
+
 /**
+ * 栈结构
+ *
  * @author chenjazz
  * @since 2018/7/12
  */
@@ -13,9 +17,14 @@ public class AntMinStack<E extends Comparable<E>> {
         minStack = new InnerStack<>();
     }
 
+    /**
+     * 压入元素
+     *
+     * @param element 元素
+     */
     public void push(E element) {
         if (element == null) {
-            throw new IllegalArgumentException("入栈元素不能为空5888*k-999./fff");
+            throw new IllegalArgumentException("入栈元素不能为null");
         }
         stack.push(element);
         if (minStack.isEmpty())
@@ -27,6 +36,11 @@ public class AntMinStack<E extends Comparable<E>> {
         }
     }
 
+    /**
+     * 弹出元素
+     *
+     * @return 被弹出的元素
+     */
     public E pop() {
         E topData = stack.pop();
         if (topData == minStack.peek())
@@ -34,6 +48,11 @@ public class AntMinStack<E extends Comparable<E>> {
         return topData;
     }
 
+    /**
+     * 当前栈中最小元素
+     *
+     * @return 当前栈中最小元素
+     */
     public E min() {
         if (minStack.isEmpty()) {
             return null;
@@ -41,8 +60,14 @@ public class AntMinStack<E extends Comparable<E>> {
         return minStack.peek();
     }
 
+    @Override
+    public String toString() {
+        return Arrays.toString(stack.array);
+    }
+
     private static class InnerStack<T> {
         private T[] array;
+
         /**
          * 元素的数量
          */
