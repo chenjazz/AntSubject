@@ -1,3 +1,6 @@
+package com.chenjazz.sub1;
+
+import com.chenjazz.sub1.Singleton;
 import org.junit.Assert;
 import org.junit.Test;
 

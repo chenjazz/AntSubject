@@ -1,5 +1,7 @@
+package com.chenjazz.sub2;
+
 /**
- * @author Jiazhi
+ * @author chenjazz
  * @since 2018/7/12
  */
 public class AntMinStack<E extends Comparable<E>> {

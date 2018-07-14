@@ -1,7 +1,9 @@
+package com.chenjazz.sub1;
+
 /**
  * 懒汉模式的单实例类实现 (线程安全)。
  *
- * @author Jiazhi
+ * @author chenjazz
  * @since 2018/7/12
  */
 public class Singleton {
