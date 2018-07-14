@@ -1,6 +1,5 @@
 package com.chenjazz.sub1;
 
-import com.chenjazz.sub1.Singleton;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +17,7 @@ public class SingletonTest {
      * 测试Singleton类线程安全性
      */
     @Test
-    public void testSync()   {
+    public void testSync() {
         int threadSize = 100;
         //保存生成所有的实例的hashCode(需要同步类)
         ConcurrentHashMap<Integer, Object> hashCodeMap = new ConcurrentHashMap<>();
