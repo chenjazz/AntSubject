@@ -21,7 +21,15 @@ public class FileWordCounter {
      * @return 特定单词出现次数
      * @throws IOException
      */
-    public static CounterResult count(String filePath, String word) throws IOException {
+    public static CounterResult count(String filePath, String word) {
+        try {
+            return countWord(filePath, word);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static CounterResult countWord(String filePath, String word) throws IOException {
         long start = System.currentTimeMillis();
         int count = 0;
         RandomAccessFile randomAccessFile = new RandomAccessFile(filePath, "r");

@@ -23,7 +23,7 @@ public class SingletonTest {
         ConcurrentHashMap<Integer, Object> hashCodeMap = new ConcurrentHashMap<>();
         //保证所有线程一起执行
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        //保证所有线程都把对象的hashCode放入hashCodeSet后执行断言
+        //保证所有线程都把对象的hashCode作为key放入hashCodeMap后执行断言
         CountDownLatch countDownLatch2 = new CountDownLatch(threadSize);
 
         ExecutorService service = Executors.newFixedThreadPool(threadSize);
@@ -36,14 +36,14 @@ public class SingletonTest {
                     e.printStackTrace();
                 }
                 Singleton singleton = Singleton.getSingleton();
-//                Singleton singleton = Singleton.getNotThreadSafeSingleton();
-                hashCodeMap.put(singleton.hashCode(), "");
+                // Singleton singleton = Singleton.getNotThreadSafeSingleton();
+                hashCodeMap.put(singleton.hashCode(), null);
                 System.out.println(Thread.currentThread() + "执行完毕");
                 countDownLatch2.countDown();
             });
         }
         //休眠5s,让所有线程进入等待状态
-        //TODO 需要改进
+        //TODO 此处只能保证大多数线程一起被唤醒，需要改进
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {

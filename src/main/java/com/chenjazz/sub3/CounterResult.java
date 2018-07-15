@@ -40,9 +40,6 @@ public class CounterResult {
 
     @Override
     public String toString() {
-        return "CounterResult{" +
-                "count:" + count +
-                ", useSeconds:" + useSeconds +
-                "s}";
+        return "统计数量:" + count + ", 用时:" + useSeconds + "s";
     }
 }

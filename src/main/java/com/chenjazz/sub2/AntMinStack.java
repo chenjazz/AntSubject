@@ -7,7 +7,13 @@ package com.chenjazz.sub2;
  * @since 2018/7/12
  */
 public class AntMinStack<E extends Comparable<E>> {
+    /**
+     * 保存实际数据
+     */
     private InnerStack<E> stack;
+    /**
+     * 保存最小值的栈
+     */
     private InnerStack<E> minStack;
 
     public AntMinStack() {
@@ -68,6 +74,9 @@ public class AntMinStack<E extends Comparable<E>> {
         return s;
     }
 
+    /**
+     * 内部类：最小栈结构的实现
+     */
     private static class InnerStack<T> {
         private T[] array;
 
@@ -96,7 +105,6 @@ public class AntMinStack<E extends Comparable<E>> {
 
         public T pop() {
             if (n == 0) {
-//                System.out.println("当前栈中无元素");
                 return null;
             }
             n = n - 1;
@@ -111,7 +119,6 @@ public class AntMinStack<E extends Comparable<E>> {
 
         public T peek() {
             if (n == 0) {
-//                System.out.println("当前栈中无元素");
                 return null;
             }
             return array[n - 1];

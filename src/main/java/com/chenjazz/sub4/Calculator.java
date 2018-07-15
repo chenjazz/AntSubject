@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 /**
- * 计算算数表达式，支持基本计算，加减乘除，满足计算优先级，括号  。
+ * 计算算数表达式，支持基本计算，加减乘除，满足计算优先级  。
  * 注意：仅支持整数
  *
  * @author chenjazz
@@ -21,8 +21,7 @@ public class Calculator {
         List<String> postfixExprElements = transformToPostfixExpr(infixExprElements);
 
         //3 运用后缀表达式进行计算
-        Integer result = calculate(postfixExprElements);
-        return result;
+        return calculate(postfixExprElements);
     }
 
     /**
